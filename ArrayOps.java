@@ -86,7 +86,11 @@ public class ArrayOps {
 
     public static boolean isSorted(int [] array) {
         // Write your code here:
-        return false;
+        if(array[0] >= array[1])
+        {
+            return checkIfIncreasing(array);
+        }
+        return checkIfDecreasing(array);
     }
 
     public static int[] convertStringToIntArray (String[] stringArray)
@@ -127,5 +131,35 @@ public class ArrayOps {
                 }
             }
             return flag;
+       }
+
+       public static boolean checkIfIncreasing (int[] array)
+       {
+        int temp = array[0];
+        for(int i=0; i<array.length; i++)
+        {
+            if(array[i] < temp)
+            {
+                return false;
+            }
+            temp = array[i];
+            
+        }
+        return true;
+       }
+
+       public static boolean checkIfDecreasing (int[] array)
+       {
+        int temp = array[0];
+        for(int i=0; i < array.length; i++)
+        {
+            if(array[i] > temp)
+            {
+                return false;
+            }
+            temp = array[i];
+            
+        }
+        return true;
        }
 }
