@@ -5,7 +5,7 @@ public class ArrayOps {
         
         int[] a  = {0,1,3,3};
         int[] b = {0,1,1,1,0,3,0,1};
-        System.out.println(containsTheSameElements(a,b));
+        System.out.println(isSorted(a));
     }
     
     public static int findMissingInt (int [] array) {
@@ -86,7 +86,7 @@ public class ArrayOps {
 
     public static boolean isSorted(int [] array) {
         // Write your code here:
-        if(array[0] >= array[1])
+        if(array[0] <= array[1])
         {
             return checkIfIncreasing(array);
         }
@@ -136,7 +136,7 @@ public class ArrayOps {
        public static boolean checkIfIncreasing (int[] array)
        {
         int temp = array[0];
-        for(int i=0; i<array.length; i++)
+        for(int i=1; i<array.length; i++)
         {
             if(array[i] < temp)
             {
@@ -151,7 +151,7 @@ public class ArrayOps {
        public static boolean checkIfDecreasing (int[] array)
        {
         int temp = array[0];
-        for(int i=0; i < array.length; i++)
+        for(int i=1; i < array.length; i++)
         {
             if(array[i] > temp)
             {
