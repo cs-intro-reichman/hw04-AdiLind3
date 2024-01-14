@@ -11,8 +11,11 @@ public class ArrayOps {
     public static int findMissingInt (int [] array) {
         // Write your code here:
         int length = array.length;
-        
         int testnum = 0;
+        if (length == 1)
+        {
+            return array[0];
+        }
         for(int i=0; i<length;i++)
         {
             Boolean flag = false;
@@ -63,14 +66,14 @@ public class ArrayOps {
          
         
         //return (flag1&&flag2);
-        for (int i = 0; i<array2.length ; i++)
+        for (int i = 0; i<array2.length ; i++) //test if array2 is in array1
         {
             if(!contains(array1, array2[i]))
             {
                 return false;
             }
         }
-        for (int k = 0; k<array1.length; k++)
+        for (int k = 0; k<array1.length; k++) //test if array1 is contain array2
         {
             if(!contains(array2, array1[k]))
             {
