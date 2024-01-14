@@ -1,8 +1,11 @@
 public class ArrayOps {
     public static void main(String[] args) {
         int[] intargs = convertStringToIntArray(args);
-        int x = secondMaxValue(intargs);
-        System.out.println("the secmax " + x);
+        //int x = secondMaxValue(intargs);
+        
+        int[] a  = {0,1,3,3};
+        int[] b = {0,1,1,1,0,3,0,1};
+        System.out.println(containsTheSameElements(a,b));
     }
     
     public static int findMissingInt (int [] array) {
@@ -52,34 +55,30 @@ public class ArrayOps {
 
     public static boolean containsTheSameElements(int [] array1,int [] array2) {
         // Write your code here:
-        int length1 = array1.length;
-        int length2 = array2.length;
-        boolean flag = false;
-        //int maxlength = Math.max(length1, length2);
-        if (length1 >= length2)
+        //int length1 = array1.length;
+        //int length2 = array2.length;
+        //Boolean flag1 = false , flag2 = false;
+           // flag1 = contains(array1, array2);
+            //flag2 = contains(array2, array1);
+         
+        
+        //return (flag1&&flag2);
+        for (int i = 0; i<array2.length ; i++)
         {
-            for(int k =0; k < length1; k++)
+            if(!contains(array1, array2[i]))
             {
-                int temp = array1[k];
-                if(contains(array2, temp))
-                {
-                    flag = true;
-                }
+                return false;
             }
         }
-        else
+        for (int k = 0; k<array1.length; k++)
         {
-            for(int t =0; t < length1; t++)
+            if(!contains(array2, array1[k]))
             {
-                int temp = array1[t];
-                if(contains(array2, temp))
-                {
-                    flag = true;
-                }
+                return false;
             }
         }
 
-        return flag;
+        return true;
     }
 
     public static boolean isSorted(int [] array) {
@@ -110,5 +109,20 @@ public class ArrayOps {
             }
         }
         return false;
-    }
+ 
+       }
+
+       public static boolean contains (int[] array1, int[] array2) {
+        Boolean flag = false;
+        
+        for(int k =0; k < array1.length ; k++)
+            {
+                int temp = array1[k];
+                if(contains(array2, temp))
+                {
+                    flag = true;
+                }
+            }
+            return flag;
+       }
 }
