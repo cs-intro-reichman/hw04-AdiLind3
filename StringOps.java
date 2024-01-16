@@ -87,6 +87,10 @@ public class StringOps {
                     result = result + temp;
                     pointer= pointer +2;
                 }
+                if(string.charAt(pointer) == ' ')
+                {
+                    pointer++;
+                }
                 
             }
             if (string.charAt(pointer)>= 65 && string.charAt(pointer) <= 90) // the ascii code of upper
