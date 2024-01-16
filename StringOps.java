@@ -22,7 +22,7 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        String test = "One two tHRee world";
+        String test = "Hello     World of   CATS";
         System.out.println(camelCase(test));
         
     }
@@ -81,15 +81,23 @@ public class StringOps {
         {
             if(string.charAt(pointer) == ' ')
             {
+                while(string.charAt(pointer+1) == ' ')
+                {
+                    pointer++;
+                }
                 if(((int) string.charAt(pointer+1) <= 122) && ((int) string.charAt(pointer+1) >= 97))
                 {
                     char temp = (char)(string.charAt(pointer+1) - 32); //change the first char after space to uppercase
                     result = result + temp;
-                    pointer= pointer +2;
+                    pointer= pointer +1;
                 }
-                if(string.charAt(pointer) == ' ')
+                else //if the char after space is Uppercase so stay the same
                 {
-                    pointer++;
+                    result = result + string.charAt(pointer+1);
+                }
+               if(string.charAt(pointer) == ' ')
+                {
+                    pointer= pointer +2;
                 }
                 
             }
