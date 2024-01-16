@@ -22,7 +22,7 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        String test = "Hello     World of   CATS";
+        String test = "HELLO   world";
         System.out.println(camelCase(test));
         
     }
@@ -107,6 +107,7 @@ public class StringOps {
                 result = result + temp2;  
             }
             else //is already lowercase so he is good
+            if(string.charAt(pointer-1) != ' ')
             {
                 result = result + string.charAt(pointer);
             }
