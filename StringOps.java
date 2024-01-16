@@ -23,7 +23,7 @@ public class StringOps {
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
         String test = "One two tHRee world";
-        System.out.println(capVowelsLowRest(test));
+        System.out.println(camelCase(test));
         
     }
 
@@ -70,7 +70,37 @@ public class StringOps {
 
     public static String camelCase (String string) {
         // Write your code here:
-        return "";
+        int pointer = string.indexOf(" ");
+        String semiresult = lowerCase(string.substring(0, pointer)); //help us to make the first word without uppercase
+        String result = ""; // the string we will return
+        int length = string.length();
+        //semiresult = lowerCase(semiresult);
+        result = semiresult; //get the first word without uppercase
+        //pointer++;
+        while (length - pointer > 0)
+        {
+            if(string.charAt(pointer) == ' ')
+            {
+                if(((int) string.charAt(pointer+1) <= 122) && ((int) string.charAt(pointer+1) >= 97))
+                {
+                    char temp = (char)(string.charAt(pointer+1) - 32); //change the first char after space to uppercase
+                    result = result + temp;
+                    pointer= pointer +2;
+                }
+                
+            }
+            if (string.charAt(pointer)>= 65 && string.charAt(pointer) <= 90) // the ascii code of upper
+            {
+                char temp2 = (char) (string.charAt(pointer) + 32); //change to lowercase
+                result = result + temp2;  
+            }
+            else //is already lowercase so he is good
+            {
+                result = result + string.charAt(pointer);
+            }
+            pointer++;
+        }
+        return result;
     }
 
     public static int[] allIndexOf (String string, char chr) {
