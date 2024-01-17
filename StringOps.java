@@ -22,8 +22,8 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        String test = "HELLO   world";
-        System.out.println(camelCase(test));
+        String test = "Hello world";
+        System.out.println(allIndexOf(test,'l'));
         
     }
 
@@ -71,21 +71,21 @@ public class StringOps {
     public static String camelCase (String string) {
         // Write your code here:
         int pointer = 0;
-        while(string.charAt(pointer) == ' ')
+        while(string.charAt(pointer) == ' ') //count how many space we have before the first word
         {
             pointer++;
         }
         //int pointer = string.indexOf(" ");
-        String semiresult = ""; //lowerCase(string.substring(0, pointer)); //help us to make the first word without uppercase
+       // String semiresult = ""; //lowerCase(string.substring(0, pointer)); //help us to make the first word without uppercase
         String result = ""; // the string we will return
         int length = string.length();
         //semiresult = lowerCase(semiresult);
         //result += string.charAt(pointer); //get the first word without uppercase
         //pointer++;
-        if (pointer >= 1){
+        if (pointer >= 1){ //edge problem that fix the problem of the first word (needs to be only lowercases)
             if(string.charAt(pointer-1) == ' ' )
             {
-                if(((int) string.charAt(pointer) <= 122) && ((int) string.charAt(pointer) >= 97))
+                if(((int) string.charAt(pointer) <= 122) && ((int) string.charAt(pointer) >= 97)) //if lowercase than put in the string
                 {
                     result += result + string.charAt(pointer);
                 }
@@ -96,7 +96,7 @@ public class StringOps {
                 }
             }
         }
-        
+        //after checking the spaces and the first char of the first word now we check all the string
         while (length - pointer > 0)
         {
             if(string.charAt(pointer) == ' ')
@@ -138,7 +138,22 @@ public class StringOps {
 
     public static int[] allIndexOf (String string, char chr) {
         // Write your code here:
-        return new int[1];
+        String str = string;
+        String newstr = "";
+        //int[] arr = new int[str.length()];
+        for(int i =0 ; i < str.length() ; i++)
+        {
+            if(str.charAt(i) == chr)
+            {
+                newstr += i;
+            }
+        }
+        int[] arr = new int[newstr.length()];
+        for(int j =0 ; j< newstr.length() ; j++)
+        {
+            arr[j] =(int) (newstr.charAt(j));
+        }
+        return arr;
     }
 
     public static String lowerCase(String s) { //from the HW3
@@ -161,17 +176,5 @@ public class StringOps {
 
         return newS;
     }
-/* 
-    public static int indexofsecspace (String str)
-    {
-        int x = 0;
-        if ((str.indexOf(' ') != 0) && (str.charAt(str.indexOf(' ')+1) != ' '))
-        {
-            return str.indexOf(' ');
-        }
-        while()
 
-
-        return index;
-    } */
 }
