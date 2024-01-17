@@ -12,7 +12,7 @@ public class ArrayOps {
         // Write your code here:
         int length = array.length;
         int testnum = 0;
-        if (length == 0)
+        if (length == 1)
         {
             if(array[0] == 1)
             {
