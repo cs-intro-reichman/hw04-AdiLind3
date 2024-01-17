@@ -22,7 +22,7 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        String test = " tWo    wordS";
+        String test = "HELLO   world";
         System.out.println(camelCase(test));
         
     }
@@ -80,8 +80,23 @@ public class StringOps {
         String result = ""; // the string we will return
         int length = string.length();
         //semiresult = lowerCase(semiresult);
-        result += string.charAt(pointer); //get the first word without uppercase
+        //result += string.charAt(pointer); //get the first word without uppercase
         //pointer++;
+        if (pointer >= 1){
+            if(string.charAt(pointer-1) == ' ' )
+            {
+                if(((int) string.charAt(pointer) <= 122) && ((int) string.charAt(pointer) >= 97))
+                {
+                    result += result + string.charAt(pointer);
+                }
+                if(string.charAt(pointer)>= 65 && string.charAt(pointer) <= 90) // the ascii code of upper
+                {
+                    char temp2 = (char) (string.charAt(pointer) + 32); //change to lowercase
+                    result = result + temp2;  
+                }
+            }
+        }
+        
         while (length - pointer > 0)
         {
             if(string.charAt(pointer) == ' ')
