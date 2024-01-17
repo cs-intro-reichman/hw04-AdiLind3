@@ -22,7 +22,7 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        String test = "HELLO   world";
+        String test = " tWo    wordS";
         System.out.println(camelCase(test));
         
     }
@@ -70,12 +70,17 @@ public class StringOps {
 
     public static String camelCase (String string) {
         // Write your code here:
-        int pointer = string.indexOf(" ");
-        String semiresult = lowerCase(string.substring(0, pointer)); //help us to make the first word without uppercase
+        int pointer = 0;
+        while(string.charAt(pointer) == ' ')
+        {
+            pointer++;
+        }
+        //int pointer = string.indexOf(" ");
+        String semiresult = ""; //lowerCase(string.substring(0, pointer)); //help us to make the first word without uppercase
         String result = ""; // the string we will return
         int length = string.length();
         //semiresult = lowerCase(semiresult);
-        result = semiresult; //get the first word without uppercase
+        result += string.charAt(pointer); //get the first word without uppercase
         //pointer++;
         while (length - pointer > 0)
         {
@@ -141,4 +146,17 @@ public class StringOps {
 
         return newS;
     }
+/* 
+    public static int indexofsecspace (String str)
+    {
+        int x = 0;
+        if ((str.indexOf(' ') != 0) && (str.charAt(str.indexOf(' ')+1) != ' '))
+        {
+            return str.indexOf(' ');
+        }
+        while()
+
+
+        return index;
+    } */
 }
