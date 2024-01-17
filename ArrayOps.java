@@ -3,9 +3,9 @@ public class ArrayOps {
         int[] intargs = convertStringToIntArray(args);
         //int x = secondMaxValue(intargs);
         
-        int[] a  = {0,1,3,3};
+        int[] a  = {0};
         int[] b = {0,1,1,1,0,3,0,1};
-        System.out.println(isSorted(a));
+        System.out.println(findMissingInt(a));
     }
     
     public static int findMissingInt (int [] array) {
@@ -14,7 +14,11 @@ public class ArrayOps {
         int testnum = 0;
         if (length == 0)
         {
-            return array[0];
+            if(array[0] == 1)
+            {
+                return 0;
+            }
+            return 1;
         }
         for(int i=0; i<length;i++)
         {
