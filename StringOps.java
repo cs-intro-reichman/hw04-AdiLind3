@@ -150,8 +150,9 @@ public class StringOps {
         }
         int[] arr = new int[newstr.length()];
         for(int j =0 ; j< newstr.length() ; j++)
-        {
-            arr[j] =(int) (newstr.charAt(j));
+        {  
+            int temp = newstr.charAt(j) -48; //take the value of the number in ascii and change to regular int
+            arr[j] =(temp);
         }
         return arr;
     }
