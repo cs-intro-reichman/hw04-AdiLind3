@@ -27,6 +27,7 @@ public class StringOps {
         
     }
 
+    //linoy feedback: please remove the unused comment in the file
     public static String capVowelsLowRest (String string) {
         // Write your code here:
         String result = ""; // create the string we want to get
