@@ -61,6 +61,8 @@ public class ArrayOps {
     }
 
     public static boolean containsTheSameElements(int [] array1,int [] array2) {
+        // linoy feedback: remove the unused comments
+        
         // Write your code here:
         //int length1 = array1.length;
         //int length2 = array2.length;
@@ -68,7 +70,7 @@ public class ArrayOps {
            // flag1 = contains(array1, array2);
             //flag2 = contains(array2, array1);
          
-        
+        //linoy feedback: this is the same code .. use new method and call it twice
         //return (flag1&&flag2);
         for (int i = 0; i<array2.length ; i++) //test if array2 is in array1
         {
